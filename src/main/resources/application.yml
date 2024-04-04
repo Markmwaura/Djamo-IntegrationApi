@@ -1,0 +1,12 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: IntegrationApi
+restClient:
+  outboundThirdPartyUrl: http://localhost:3000/transaction
+  inboundWebhookUrl: http://localhost:3000
+
+
+
