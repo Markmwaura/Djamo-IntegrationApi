@@ -8,3 +8,8 @@ and preventing potentially destructive occurrences caused by client retries.
 This Api will handle request in a parallel manner to improve speed but can also be upgraded to execute in non-blocking manner.Due to the uncertain nature of third party apis, we could also add functionality whenever theres's Failure or an exception is caused by a third party api , to perform automatic retrial of failed requests.
 
 
+# Technologies
+1. Spring-boot
+2. Redis Cache
+3. Kotlin Language
+

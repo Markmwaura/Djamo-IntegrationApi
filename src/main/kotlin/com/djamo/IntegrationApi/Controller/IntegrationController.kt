@@ -24,7 +24,7 @@ class IntegrationController: AbstractController() {
     lateinit var iThirdPartyTransactionService: IThirdPartyTransactionService
 
     @PostMapping(value = ["/transaction"], produces = ["application/json"])
-    @Operation(summary = "Receive transaction and send to ThirdParty API")
+    @Operation(summary = "Receive payload and send to ThirdParty API")
     suspend fun sendDataToThirdPartyApi(@RequestBody dto: TransactionRequest): ThirdPartyResponse {
        val thirdPartyRes = CoroutineScope(Dispatchers.IO).async { iThirdPartyTransactionService.sendDataToThirdParty(id = dto.id, webhookUrl = "") }
         return thirdPartyRes.await()
