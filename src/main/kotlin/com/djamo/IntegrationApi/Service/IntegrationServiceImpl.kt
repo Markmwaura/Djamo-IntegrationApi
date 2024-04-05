@@ -16,9 +16,9 @@ import org.springframework.web.reactive.function.client.awaitBody
 import org.springframework.web.reactive.function.client.awaitExchange
 import org.springframework.web.reactive.function.client.createExceptionAndAwait
 
-@Service("transactionServiceImpl")
-class TransactionServiceImpl(
-    @Qualifier("sendTransactionWebClientConfig")
+@Service("ThirdPartyServiceImpl")
+class IntegrationServiceImpl(
+    @Qualifier("integrationWebClientConfig")
     val webClient: WebClient
 ) : IThirdPartyTransactionService {
 
