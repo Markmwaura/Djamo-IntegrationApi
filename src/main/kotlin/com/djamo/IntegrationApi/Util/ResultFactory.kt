@@ -1,4 +1,5 @@
 package com.djamo.IntegrationApi.Util
+import com.djamo.IntegrationApi.DTO.Result
 
 object ResultFactory {
     fun <T> getSuccessResult(data: T): Result<T> {

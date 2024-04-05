@@ -1,6 +1,6 @@
 package com.djamo.IntegrationApi.Controller
 
-import com.djamo.IntegrationApi.Util.Result
+import com.djamo.IntegrationApi.DTO.Result
 import com.djamo.IntegrationApi.Util.ResultFactory
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ExceptionHandler
@@ -13,7 +13,7 @@ const val NESTED_EXCEPTION_DELIMITER = "; nested exception is"
 abstract class AbstractController {
     @ResponseStatus(HttpStatus.GATEWAY_TIMEOUT)
     @ExceptionHandler(AsyncRequestTimeoutException::class)
-    fun handleValidationExceptions(ex: AsyncRequestTimeoutException): com.djamo.IntegrationApi.Util.Result<MutableMap<String, String?>> {
+    fun handleValidationExceptions(ex: AsyncRequestTimeoutException): Result<MutableMap<String, String?>> {
         val errors = mutableMapOf<String, String?>()
         ex.message
         return ResultFactory.getFailResult(msg=ex.message, data = errors)
